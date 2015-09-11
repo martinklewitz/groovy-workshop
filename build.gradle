@@ -1,0 +1,60 @@
+project.ext {
+  groupId = 'info.klewitz'
+  artifactId = 'groovy-workshop'
+  version = new Date().format('yyyy-MM-dd-HH-mm-ss')
+}
+
+buildscript {
+  repositories {
+    mavenLocal()
+    //maven { url "http://nexus-beta.hypoport.local/nexus/content/repositories/efi" }
+  }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+jar.baseName = project.ext.artifactId
+jar.version = project.ext.version
+
+sourceSets {
+  main {
+    output.classesDir = "$buildDir/classes/main"
+    output.resourcesDir = "$buildDir/classes/main"
+  }
+  test {
+    output.classesDir = "$buildDir/classes/test"
+    output.resourcesDir = "$buildDir/classes/test"
+  }
+}
+
+repositories {
+  mavenLocal()
+  //maven { url 'http://nexus-beta.hypoport.local/nexus/content/repositories/efi' }
+}
+
+compileJava {
+  sourceCompatibility = "1.8"
+  targetCompatibility = "1.8"
+}
+
+dependencies {
+  compile('commons-io:commons-io:2.4')
+  compile('org.codehaus.groovy:groovy-all:2.3.11')
+
+  testCompile('org.easytesting:fest-assert:1.4')
+  testCompile('junit:junit:4.11')
+}
+
+task writeVersionTxt << {
+  new File("version.txt").withWriter { out ->
+    out.print project.ext.version
+  }
+}
+
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.1'
+}
