@@ -1,4 +1,4 @@
-package info.klewitz.groovy.learning
+package info.klewitz.groovy.learning.compilestatic
 
 import groovy.transform.CompileStatic
 

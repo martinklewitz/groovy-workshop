@@ -1,5 +1,7 @@
 package info.klewitz.groovy.learning;
 
+import info.klewitz.groovy.learning.compilestatic.CompileDynamicClass;
+import info.klewitz.groovy.learning.compilestatic.CompileStaticClass;
 import org.junit.Test;
 
 public class CompileStaticClassTest {

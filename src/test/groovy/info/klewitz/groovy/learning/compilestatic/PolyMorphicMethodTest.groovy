@@ -1,9 +1,7 @@
-package info.klewitz.groovy.learning
+package info.klewitz.groovy.learning.compilestatic
 
-import groovy.transform.CompileStatic;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import info.klewitz.groovy.learning.compilestatic.PolyMorphicMethod;
+import org.junit.Test
 
 //@CompileStatic
 public class PolyMorphicMethodTest {
