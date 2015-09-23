@@ -42,8 +42,8 @@ compileJava {
 
 dependencies {
   compile('commons-io:commons-io:2.4')
-  //compile('org.codehaus.groovy:groovy-all:2.3.11')
-  compile('org.codehaus.groovy:groovy-all:2.1.5')
+  compile('org.codehaus.groovy:groovy-all:2.4.4')
+  //compile('org.codehaus.groovy:groovy-all:2.1.5')
 
   testCompile('org.easytesting:fest-assert:1.4')
   testCompile('junit:junit:4.11')
